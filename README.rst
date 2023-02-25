@@ -65,6 +65,12 @@ Results
 If you run any of the experiment scripts, by default experiment results are saved to the ``~/baposgmcp_results`` directory.
 
 
+Questions or Issues
+-------------------
+
+If you have any questions or issues please email jonathon.schwartz@anu.edu.au or create an issue in the issue section on github.
+
+
 Authors
 -------
 
