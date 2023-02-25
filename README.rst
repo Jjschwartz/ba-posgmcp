@@ -73,9 +73,7 @@ Jonathon Schwartz (primary author and code writer/maintainer) and Hanna Kurniwat
 Please Cite
 -----------
 
-If you use the code in this repository or the **BA-POSGMCP** algorithm, consider citing
-
-.. code_block::
+If you use the code in this repository or the **BA-POSGMCP** algorithm, consider citing::
 
    @inproceedings{schwartzBayesadaptiveMontecarloPlanning2023,
        title = {Bayes-Adaptive Monte-Carlo Planning for Type-Based Reasoning in Large Partially Observable Environments: Extended Abstract},
