@@ -1,4 +1,5 @@
 """Run BAPOSGMCP experiment in Driving env with KLR policies."""
+import copy
 import math
 from pprint import pprint
 
@@ -167,16 +168,14 @@ BAPOSGMCP_KWARGS = {
 def get_baselines(agent_id: int, other_agent_id: int):   # noqa
     variable_params = {
         "num_sims": NUM_SIMS,
-        # "action_selection": ["pucb", "ucb", "uniform"],
-        # "truncated": [True, False]
         "action_selection": ["pucb"],
         "truncated": [True]
     }
 
     meta_pis = [
         ("greedy", GREEDY_META_POLICY_MAP[agent_id]),
-        # ("softmax", SOFTMAX_META_POLICY_MAP),
-        # ("uniform", UNIFORM_META_POLICY_MAP)
+        ("softmax", SOFTMAX_META_POLICY_MAP),
+        ("uniform", UNIFORM_META_POLICY_MAP)
     ]
 
     baseline_params = []
@@ -194,18 +193,8 @@ def get_baselines(agent_id: int, other_agent_id: int):   # noqa
     # = |metabaseline| + |POMeta| + |POMetaRollout|
     # = (|Meta|) + (|NUM_SIMS| * |Meta|)
     #   + (|NUM_SIMS| * |ACT SEL| * |Truncated| * |Meta|)
-
-    # with truncated and different action selections
-    # = (3) + (5 * 3) + (5 * 3 * 2 * 3)
-    # = 3 + 15 + 90
-    # = 108
-    # assert (
-    #   len(baseline_params) == (3 + (len(NUM_SIMS)*3) + (len(NUM_SIMS)*3*2*3))
-    # )
-
-    # without truncated options and only pucb and greedy meta-pi
-    # = (1) + (5 * 1) + (5 * 1 * 1 * 1)
-    # = 11
+    # = (3) + (5 * 3) + (5 * 1 * 1 * 3)
+    # = 33
     exp_num_params = (
         len(meta_pis)
         + len(NUM_SIMS)*len(meta_pis)
@@ -219,8 +208,6 @@ def get_baselines(agent_id: int, other_agent_id: int):   # noqa
 def get_baposgmcps(agent_id: int, other_agent_id: int):   # noqa
     variable_params = {
         "num_sims": NUM_SIMS,
-        # "action_selection": ["pucb", "ucb", "uniform"],
-        # "truncated": [True, False]
         "action_selection": ["pucb"],
         "truncated": [True]
     }
@@ -244,13 +231,6 @@ def get_baposgmcps(agent_id: int, other_agent_id: int):   # noqa
         )
     # NUM Exps:
     # = |NUM_SIMS| * |ACT SEL| * |Truncated| * |Meta|
-
-    # With truncated/not and all act selection options
-    # = 5 * 3 * 2 * 3
-    # = 90
-    # assert len(baposgmcp_params) == (len(NUM_SIMS)*3*2*3)
-
-    # With truncated and PUCB
     # = 5 * 1 * 1 * 3
     # = 15
     exp_num_params = (
@@ -265,21 +245,20 @@ def get_fixed_baposgmcps(agent_id: int, other_agent_id: int):   # noqa
     # random only works for 'truncated=False'
     random_variable_params = {
         "num_sims": NUM_SIMS,
-        # "action_selection": ["pucb", "ucb", "uniform"],
         "action_selection": ["pucb"],
         "truncated": [False]
     }
+    random_kwargs = copy.deepcopy(BAPOSGMCP_KWARGS)
+    random_kwargs["truncated"] = False
     baposgmcp_params = baseline_lib.load_random_baposgmcp_params(
         variable_params=random_variable_params,
-        baposgmcp_kwargs=BAPOSGMCP_KWARGS,
+        baposgmcp_kwargs=random_kwargs,
         policy_prior_map=POLICY_PRIOR_MAP[other_agent_id],
         base_policy_id=f"baposgmcp-random_i{agent_id}"
     )
 
     fixed_variable_params = {
         "num_sims": NUM_SIMS,
-        # "action_selection": ["pucb", "ucb", "uniform"],
-        # "truncated": [True, False]
         "action_selection": ["pucb"],
         "truncated": [True]
     }
@@ -294,12 +273,6 @@ def get_fixed_baposgmcps(agent_id: int, other_agent_id: int):   # noqa
     )
     # NUM Exps:
     # = (|NUM_SIMS|*|ACT SEL|) + (|NUM_SIMS|*|ACT SEL|*|Truncated|*|PIS|)
-
-    # With truncated/not and all act selection options
-    # = (5 * 3) + (5 * 3 * 2 * 5)
-    # = 165
-
-    # With truncated and PUCB
     # = (5 * 1) + (5 * 1 * 1 * 5)
     # = 30
     exp_num_params = (
