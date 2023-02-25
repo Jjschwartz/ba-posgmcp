@@ -75,12 +75,12 @@ Please Cite
 
 If you use the code in this repository or the **BA-POSGMCP** algorithm, consider citing
 
-```
-@inproceedings{schwartzBayesadaptiveMontecarloPlanning2023,
-   title={Bayes-Adaptive Monte-Carlo Planning for Type-Based Reasoning in Large Partially Observable Environments: Extended Abstract},
-   author={Jonathon Schwartz and Hanna Kurniawati},
-   booktitle={Autonomous Agents and Multiagent Systems (AAMAS)},
-   year={2023},
-   code={https://github.com/Jjschwartz/ba-posgmcp},
-}
-```
+.. code_block::
+
+   @inproceedings{schwartzBayesadaptiveMontecarloPlanning2023,
+       title = {Bayes-Adaptive Monte-Carlo Planning for Type-Based Reasoning in Large Partially Observable Environments: Extended Abstract},
+       author = {Jonathon Schwartz and Hanna Kurniawati},
+       booktitle = {Autonomous Agents and Multiagent Systems (AAMAS)},
+       year = {2023},
+       code = {https://github.com/Jjschwartz/ba-posgmcp},
+   }
