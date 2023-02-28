@@ -3,7 +3,14 @@ BA-POSGMCP
 
 This repository contains the implementation of the Bayes Adaptive Monte-Carlo Planning algorithm for Partially Observable Stochastic Games (BA-POSGMCP) algorithm used for the AAMAS paper *Bayes-Adaptive Monte-Carlo Planning for Type-Based Reasoning in Large Partially Observable Environments*.
 
-The **full paper** is available in the ``paper`` subdirectory.
+Read the paper
+--------------
+
+Available in this repository are the:
+
+- [full paper](full_paper.pdf)
+- [extended abstract](extended_abstract.pdf)
+
 
 Installation
 ------------
