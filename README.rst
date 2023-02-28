@@ -8,8 +8,8 @@ Read the paper
 
 Available in this repository are the:
 
-- [full paper](full_paper.pdf)
-- [extended abstract](extended_abstract.pdf)
+- `full paper <https://github.com/Jjschwartz/ba-posgmcp/blob/main/full_paper.pdf>`_
+- `extended abstract <https://github.com/Jjschwartz/ba-posgmcp/blob/main/extended_abstract.pdf>`_
 
 
 Installation
