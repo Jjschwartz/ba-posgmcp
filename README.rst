@@ -1,7 +1,12 @@
 BA-POSGMCP
 ###########
 
-This repository contains the implementation of the Bayes Adaptive Monte-Carlo Planning algorithm for Partially Observable Stochastic Games (BA-POSGMCP) algorithm used for the AAMAS paper *Bayes-Adaptive Monte-Carlo Planning for Type-Based Reasoning in Large Partially Observable Environments*.
+This repository contains the implementation of the Bayes Adaptive Monte-Carlo Planning algorithm for Partially Observable Stochastic Games (BA-POSGMCP) algorithm used for the AAMAS paper `Bayes-Adaptive Monte-Carlo Planning for Type-Based Reasoning in Large Partially Observable Environments <https://www.southampton.ac.uk/~eg/AAMAS2023/pdfs/p2355.pdf>`_.
+
+.. note::
+    An updated and extended version of the paper is now available: ``Combining a Meta-Policy and Monte-Carlo Planning for Scalable Type-Based Reasoning in Partially Observable Environments <https://arxiv.org/abs/2306.06067>`_. 
+    
+    The code for the newer paper is available at: `<https://github.com/Jjschwartz/potmmcp>`_.
 
 Read the paper
 --------------
@@ -87,12 +92,4 @@ Jonathon Schwartz (primary author and code writer/maintainer) and Hanna Kurniwat
 Please Cite
 -----------
 
-If you use the code in this repository or the **BA-POSGMCP** algorithm, consider citing::
-
-   @inproceedings{schwartzBayesadaptiveMontecarloPlanning2023,
-       title = {Bayes-Adaptive Monte-Carlo Planning for Type-Based Reasoning in Large Partially Observable Environments: Extended Abstract},
-       author = {Jonathon Schwartz and Hanna Kurniawati},
-       booktitle = {Autonomous Agents and Multiagent Systems (AAMAS)},
-       year = {2023},
-       code = {https://github.com/Jjschwartz/ba-posgmcp},
-   }
+If you use the code in this repository or the **BA-POSGMCP** algorithm, please consider citing the latest version of this work. The citation instructions are available in the README at: `<https://github.com/Jjschwartz/potmmcp>`_
