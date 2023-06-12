@@ -1,4 +1,4 @@
-**An updated and extended version of the paper is now available: ``Combining a Meta-Policy and Monte-Carlo Planning for Scalable Type-Based Reasoning in Partially Observable Environments** `<https://arxiv.org/abs/2306.06067>`_. **The code for the newer paper is available at:** `<https://github.com/Jjschwartz/potmmcp>`_.
+**An updated and extended version of the paper is now available:** `Combining a Meta-Policy and Monte-Carlo Planning for Scalable Type-Based Reasoning in Partially Observable Environments <https://arxiv.org/abs/2306.06067>`_. **The code for the newer paper is available at:** `<https://github.com/Jjschwartz/potmmcp>`_.
 
 BA-POSGMCP
 ###########
