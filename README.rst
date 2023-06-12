@@ -89,4 +89,4 @@ Jonathon Schwartz (primary author and code writer/maintainer) and Hanna Kurniwat
 Please Cite
 -----------
 
-If you use the code in this repository or the **BA-POSGMCP** algorithm, please consider citing the latest version of this work. The citation instructions are available in the README at: `<https://github.com/Jjschwartz/potmmcp>`_
+If you use the code in this repository or the BA-POSGMCP algorithm, please consider citing the latest version of this work. The citation instructions are available in the README at: `<https://github.com/Jjschwartz/potmmcp>`_
